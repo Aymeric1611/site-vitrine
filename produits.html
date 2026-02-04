@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produits - Kécolor</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .color-selector {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .color-input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .color-input-wrapper label {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .color-input-wrapper input[type="color"] {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .color-preview {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            border: 2px solid #999;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .color-info-text {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="site-title">
+        <a href="index.html">
+          <img src="image/Logo Kécolor avec nom entreprise.png" alt="Kécolor Logo" height="50">
+          Kécolor
+        </a>
+      </h1>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <a href="index.html">Accueil</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="produits.html" class="active">Produits</a>
+        <a href="recrutement.html">Recrutement</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html" class="cart-link">🛒 Panier</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="content container">
+    <h1>Nos Produits</h1>
+
+    <!-- Section Peintures -->
+    <section id="peintures" class="product-section">
+        <h2>Peintures Acryliques Premium - Couleur Libre</h2>
+        
+        <div class="product-card">
+            <div class="product-details">
+                <h3>Peinture Acrylique Personnalisée</h3>
+                <p class="description">Choisissez n'importe quelle couleur! Nos peintures acryliques premium offrent une qualité exceptionnelle avec des couleurs vibrantes et durables.</p>
+                
+                <div class="color-selector">
+                    <div class="color-input-wrapper">
+                        <label for="paintColor">Sélectionnez votre pigment :</label>
+                        <input type="color" id="paintColor" name="color_paint" value="#FF5733" title="Cliquez pour choisir votre couleur">
+                        <span class="color-info-text">Note: l'aperçu se mettra à jour après la validation du formulaire (sans JavaScript).</span>
+                    </div>
+                    <div class="color-preview" style="background-color: #FF5733;">
+                        Aperçu<br>#FF5733
+                    </div>
+                </div>
+
+                <div class="product-specs">
+                    <h4>Disponibilités :</h4>
+                    <ul>
+                        <li>250 ml - <strong>15€</strong></li>
+                        <li>500 ml - <strong>25€</strong></li>
+                        <li>1 Litre - <strong>40€</strong></li>
+                        <li>5 Litres - <strong>150€</strong></li>
+                    </ul>
+                </div>
+
+                <div class="product-info">
+                    <h4>Caractéristiques</h4>
+                    <ul>
+                        <li>✓ Pigments haute qualité</li>
+                        <li>✓ Séchage rapide</li>
+                        <li>✓ Résistance aux UV</li>
+                        <li>✓ Personnalisation infinie</li>
+                        <li>✓ Respectueux de l'environnement</li>
+                    </ul>
+                </div>
+
+                <form action="panier.html" method="GET" class="product-form">
+                    <input type="hidden" name="product" value="Peinture Acrylique">
+                    <select name="size" required>
+                        <option value="">-- Sélectionnez une taille --</option>
+                        <option value="250">250 ml - 15€</option>
+                        <option value="500">500 ml - 25€</option>
+                        <option value="1000">1 Litre - 40€</option>
+                        <option value="5000">5 Litres - 150€</option>
+                    </select>
+                    <input type="number" name="quantity" value="1" min="1" max="10" placeholder="Quantité">
+                    <input type="color" name="color" value="#FF5733" title="Choisissez votre couleur">
+                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Feutres -->
+    <section id="feutres" class="product-section">
+        <h2>Feutres Professionnels - Couleur Libre</h2>
+        
+        <div class="product-card">
+            <div class="product-details">
+                <h3>Feutres Professionnels Personnalisés</h3>
+                <p class="description">Choisissez votre couleur! Feutres de haute qualité avec une encre premium et une durée de vie exceptionnelle.</p>
+                
+                <div class="color-selector">
+                    <div class="color-input-wrapper">
+                        <label for="feltColor">Sélectionnez votre pigment :</label>
+                        <input type="color" id="feltColor" name="color_felt" value="#3357FF" title="Cliquez pour choisir votre couleur">
+                        <span class="color-info-text">Note: l'aperçu se mettra à jour après la validation du formulaire (sans JavaScript).</span>
+                    </div>
+                    <div class="color-preview" style="background-color: #3357FF;">
+                        Aperçu<br>#3357FF
+                    </div>
+                </div>
+
+                <div class="product-specs">
+                    <h4>Options de pointe :</h4>
+                    <ul>
+                        <li>Fine (0.5mm) - <strong>3€</strong></li>
+                        <li>Moyenne (1mm) - <strong>4€</strong></li>
+                        <li>Large (2mm) - <strong>5€</strong></li>
+                        <li>Pinceau - <strong>6€</strong></li>
+                    </ul>
+                </div>
+
+                <div class="product-info">
+                    <h4>Caractéristiques</h4>
+                    <ul>
+                        <li>✓ Encre premium longue tenue</li>
+                        <li>✓ Mine antidesséchement</li>
+                        <li>✓ Couleurs vibrantes</li>
+                        <li>✓ Parfait pour tous les supports</li>
+                        <li>✓ Personnalisation de couleur</li>
+                    </ul>
+                </div>
+
+                <form action="panier.html" method="GET" class="product-form">
+                    <input type="hidden" name="product" value="Feutre Professionnel">
+                    <select name="type" required>
+                        <option value="">-- Sélectionnez une pointe --</option>
+                        <option value="fine">Fine (0.5mm) - 3€</option>
+                        <option value="medium">Moyenne (1mm) - 4€</option>
+                        <option value="large">Large (2mm) - 5€</option>
+                        <option value="brush">Pinceau - 6€</option>
+                    </select>
+                    <select name="quantity" required>
+                        <option value="">-- Sélectionnez une quantité --</option>
+                        <option value="1">1 feutre</option>
+                        <option value="6">6 feutres (20% de réduction)</option>
+                        <option value="12">12 feutres (30% de réduction)</option>
+                        <option value="24">24 feutres (40% de réduction)</option>
+                    </select>
+                    <input type="color" name="color" value="#3357FF" title="Choisissez votre couleur">
+                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kits -->
+    <section id="kits" class="product-section">
+        <h2>Kits Spécialisés Prêts à l'Emploi</h2>
+        
+        <div class="kits-grid">
+            <div class="kit-card">
+                <h3>Kit Débutant</h3>
+                <p class="price">49€</p>
+                <div class="kit-colors">
+                    <div class="color-swatch" style="background-color: #FF5733;"></div>
+                    <div class="color-swatch" style="background-color: #3357FF;"></div>
+                    <div class="color-swatch" style="background-color: #2EBF5C;"></div>
+                    <div class="color-swatch" style="background-color: #FFD700;"></div>
+                </div>
+                <ul>
+                    <li>4 couleurs peinture 500ml</li>
+                    <li>12 feutres assortis</li>
+                    <li>Palette mélange</li>
+                    <li>Pinceaux (set 5)</li>
+                </ul>
+                <form action="panier.html" method="GET" class="kit-form">
+                    <input type="hidden" name="product" value="Kit Débutant">
+                    <input type="hidden" name="price" value="49">
+                    <input type="number" name="quantity" value="1" min="1" max="10">
+                    <button type="submit" class="btn btn-secondary">Ajouter au panier</button>
+                </form>
+            </div>
+
+            <div class="kit-card">
+                <h3>Kit Artiste</h3>
+                <p class="price">129€</p>
+                <div class="kit-colors">
+                    <div class="color-swatch" style="background-color: #FF5733;"></div>
+                    <div class="color-swatch" style="background-color: #3357FF;"></div>
+                    <div class="color-swatch" style="background-color: #2EBF5C;"></div>
+                    <div class="color-swatch" style="background-color: #FFD700;"></div>
+                    <div class="color-swatch" style="background-color: #9B59B6;"></div>
+                </div>
+                <ul>
+                    <li>8 couleurs peinture 1L</li>
+                    <li>24 feutres premium</li>
+                    <li>Palette professionnelle</li>
+                    <li>Pinceaux (set 10)</li>
+                    <li>Toile 50x50cm</li>
+                </ul>
+                <form action="panier.html" method="GET" class="kit-form">
+                    <input type="hidden" name="product" value="Kit Artiste">
+                    <input type="hidden" name="price" value="129">
+                    <input type="number" name="quantity" value="1" min="1" max="10">
+                    <button type="submit" class="btn btn-secondary">Ajouter au panier</button>
+                </form>
+            </div>
+
+            <div class="kit-card">
+                <h3>Kit Studio Pro</h3>
+                <p class="price">299€</p>
+                <div class="kit-colors">
+                    <div class="color-swatch" style="background-color: #FF5733;"></div>
+                    <div class="color-swatch" style="background-color: #3357FF;"></div>
+                    <div class="color-swatch" style="background-color: #2EBF5C;"></div>
+                    <div class="color-swatch" style="background-color: #FFD700;"></div>
+                    <div class="color-swatch" style="background-color: #9B59B6;"></div>
+                </div>
+                <ul>
+                    <li>Palette complète 15 couleurs 1L</li>
+                    <li>48 feutres ultra premium</li>
+                    <li>Station de mélange</li>
+                    <li>Pinceaux (set 20)</li>
+                    <li>Toiles assorties</li>
+                    <li>Support de rangement</li>
+                </ul>
+                <form action="panier.html" method="GET" class="kit-form">
+                    <input type="hidden" name="product" value="Kit Studio Pro">
+                    <input type="hidden" name="price" value="299">
+                    <input type="number" name="quantity" value="1" min="1" max="10">
+                    <button type="submit" class="btn btn-secondary">Ajouter au panier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>À propos</h4>
+        <ul>
+          <li><a href="histoire.html">Notre histoire</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+          <li><a href="recrutement.html">Rejoignez-nous</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Nous contacter</a></li>
+          <li><a href="panier.html">Panier</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Suivez-nous</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kécolor - Aymeric Joblin — <a href="mailto:aymericjoblin@gmail.com">aymericjoblin@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

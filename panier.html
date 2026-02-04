@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panier - Kécolor</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="site-title">
+        <a href="index.html">
+          <img src="image/Logo Kécolor avec nom entreprise.png" alt="Kécolor Logo" height="50">
+        </a>
+      </h1>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <a href="index.html">Accueil</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="produits.html">Produits</a>
+        <a href="recrutement.html">Recrutement</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html" class="cart-link active">🛒 Panier</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="content container">
+    <h1>Formulaire de Commande</h1>
+
+    <div class="order-form-section">
+        <p class="info-text"><strong>Bienvenue !</strong> Veuillez remplir ce formulaire pour passer votre commande. Un agent confirmera votre demande.</p>
+        
+        <form method="POST" action="confirmation.html" class="order-form">
+            <!-- Section Article(s) -->
+            <fieldset class="form-section">
+                <legend>Sélectionnez vos article(s)</legend>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="article" value="Peinture Acrylique">
+                        <strong>Peinture Acrylique</strong>
+                    </label>
+                    <select name="paint_size" class="form-control">
+                        <option value="">-- Taille --</option>
+                        <option value="250">250 ml - 15€</option>
+                        <option value="500">500 ml - 25€</option>
+                        <option value="1000">1 Litre - 40€</option>
+                        <option value="5000">5 Litres - 150€</option>
+                    </select>
+                    <input type="number" name="paint_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="article" value="Feutre Professionnel">
+                        <strong>Feutre Professionnel</strong>
+                    </label>
+                    <select name="felt_type" class="form-control">
+                        <option value="">-- Type de pointe --</option>
+                        <option value="fine">Fine (0.5mm) - 3€</option>
+                        <option value="medium">Moyenne (1mm) - 4€</option>
+                        <option value="large">Large (2mm) - 5€</option>
+                        <option value="brush">Pinceau - 6€</option>
+                    </select>
+                    <select name="felt_qty" class="form-control">
+                        <option value="">-- Quantité --</option>
+                        <option value="1">1 feutre</option>
+                        <option value="6">6 feutres (20% réduction)</option>
+                        <option value="12">12 feutres (30% réduction)</option>
+                        <option value="24">24 feutres (40% réduction)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="article" value="Kit Débutant">
+                        <strong>Kit Débutant - 49€</strong>
+                    </label>
+                    <input type="number" name="kit1_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="article" value="Kit Artiste">
+                        <strong>Kit Artiste - 129€</strong>
+                    </label>
+                    <input type="number" name="kit2_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="article" value="Kit Studio Pro">
+                        <strong>Kit Studio Pro - 299€</strong>
+                    </label>
+                    <input type="number" name="kit3_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
+                </div>
+            </fieldset>
+
+            <!-- Section Livraison -->
+            <fieldset class="form-section">
+                <legend>Options de Livraison</legend>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="shipping" value="standard" required>
+                        Livraison Standard - 5€ (5-7 jours)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="shipping" value="express">
+                        Livraison Express - 15€ (2-3 jours)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="shipping" value="pickup">
+                        Retrait sur place - Gratuit
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Section Adresse -->
+            <fieldset class="form-section">
+                <legend>Adresse de Livraison</legend>
+                
+                <div class="form-group">
+                    <label for="firstname">Prénom *</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Nom *</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Adresse *</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postal">Code Postal *</label>
+                        <input type="text" id="postal" name="postal" pattern="[0-9]{5}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Ville *</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Pays *</label>
+                    <input type="text" id="country" name="country" value="France" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9\s\-\+\(\)]{10,}" required>
+                </div>
+            </fieldset>
+
+            <!-- Section Contact -->
+            <fieldset class="form-section">
+                <legend>Informations de Contact</legend>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message ou demandes spéciales</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Décrivez vos demandes spéciales..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Section Paiement -->
+            <fieldset class="form-section">
+                <legend>Méthode de Paiement</legend>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment" value="card" required>
+                        Carte Bancaire
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment" value="paypal">
+                        PayPal
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="payment" value="transfer">
+                        Virement Bancaire
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="conditions" required>
+                        J'accepte les <a href="#" target="_blank">conditions générales</a>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Boutons -->
+            <div class="form-actions">
+                <button type="reset" class="btn btn-secondary">Effacer</button>
+                <button type="submit" class="btn btn-primary btn-large">Valider la commande</button>
+            </div>
+        </form>
+
+        <!-- Section Info Tarifs -->
+        <div class="tariffs-info">
+            <h3>Tarifs de Référence</h3>
+            <table class="tariff-table">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Format/Type</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Peinture Acrylique</td>
+                        <td>250 ml</td>
+                        <td>15€</td>
+                    </tr>
+                    <tr>
+                        <td>Peinture Acrylique</td>
+                        <td>500 ml</td>
+                        <td>25€</td>
+                    </tr>
+                    <tr>
+                        <td>Peinture Acrylique</td>
+                        <td>1 Litre</td>
+                        <td>40€</td>
+                    </tr>
+                    <tr>
+                        <td>Peinture Acrylique</td>
+                        <td>5 Litres</td>
+                        <td>150€</td>
+                    </tr>
+                    <tr>
+                        <td>Feutre Professionnel</td>
+                        <td>Fine (0.5mm)</td>
+                        <td>3€</td>
+                    </tr>
+                    <tr>
+                        <td>Feutre Professionnel</td>
+                        <td>Moyenne (1mm)</td>
+                        <td>4€</td>
+                    </tr>
+                    <tr>
+                        <td>Feutre Professionnel</td>
+                        <td>Large (2mm)</td>
+                        <td>5€</td>
+                    </tr>
+                    <tr>
+                        <td>Feutre Professionnel</td>
+                        <td>Pinceau</td>
+                        <td>6€</td>
+                    </tr>
+                    <tr>
+                        <td>Kit Débutant</td>
+                        <td>Complet</td>
+                        <td>49€</td>
+                    </tr>
+                    <tr>
+                        <td>Kit Artiste</td>
+                        <td>Complet</td>
+                        <td>129€</td>
+                    </tr>
+                    <tr>
+                        <td>Kit Studio Pro</td>
+                        <td>Complet</td>
+                        <td>299€</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>À propos</h4>
+        <ul>
+          <li><a href="histoire.html">Notre histoire</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+          <li><a href="recrutement.html">Rejoignez-nous</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Nous contacter</a></li>
+          <li><a href="panier.html">Panier</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Suivez-nous</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kécolor - Aymeric Joblin — <a href="mailto:aymericjoblin@gmail.com">aymericjoblin@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
