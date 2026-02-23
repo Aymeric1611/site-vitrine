@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Panier - Kécolor</title>
     <link href="style.css" rel="stylesheet">
+    <script src="cart.js" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -29,268 +30,8 @@
 </header>
 
 <main class="content container">
-    <h1>Formulaire de Commande</h1>
-
-    <div class="order-form-section">
-        <p class="info-text"><strong>Bienvenue !</strong> Veuillez remplir ce formulaire pour passer votre commande. Un agent confirmera votre demande.</p>
-        
-        <form method="POST" action="confirmation.html" class="order-form">
-            <!-- Section Article(s) -->
-            <fieldset class="form-section">
-                <legend>Sélectionnez vos article(s)</legend>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="article" value="Peinture Acrylique">
-                        <strong>Peinture Acrylique</strong>
-                    </label>
-                    <select name="paint_size" class="form-control">
-                        <option value="">-- Taille --</option>
-                        <option value="250">250 ml - 15€</option>
-                        <option value="500">500 ml - 25€</option>
-                        <option value="1000">1 Litre - 40€</option>
-                        <option value="5000">5 Litres - 150€</option>
-                    </select>
-                    <input type="number" name="paint_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="article" value="Feutre Professionnel">
-                        <strong>Feutre Professionnel</strong>
-                    </label>
-                    <select name="felt_type" class="form-control">
-                        <option value="">-- Type de pointe --</option>
-                        <option value="fine">Fine (0.5mm) - 3€</option>
-                        <option value="medium">Moyenne (1mm) - 4€</option>
-                        <option value="large">Large (2mm) - 5€</option>
-                        <option value="brush">Pinceau - 6€</option>
-                    </select>
-                    <select name="felt_qty" class="form-control">
-                        <option value="">-- Quantité --</option>
-                        <option value="1">1 feutre</option>
-                        <option value="6">6 feutres (20% réduction)</option>
-                        <option value="12">12 feutres (30% réduction)</option>
-                        <option value="24">24 feutres (40% réduction)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="article" value="Kit Débutant">
-                        <strong>Kit Débutant - 49€</strong>
-                    </label>
-                    <input type="number" name="kit1_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="article" value="Kit Artiste">
-                        <strong>Kit Artiste - 129€</strong>
-                    </label>
-                    <input type="number" name="kit2_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="article" value="Kit Studio Pro">
-                        <strong>Kit Studio Pro - 299€</strong>
-                    </label>
-                    <input type="number" name="kit3_qty" min="1" max="10" value="1" placeholder="Quantité" class="form-control">
-                </div>
-            </fieldset>
-
-            <!-- Section Livraison -->
-            <fieldset class="form-section">
-                <legend>Options de Livraison</legend>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="shipping" value="standard" required>
-                        Livraison Standard - 5€ (5-7 jours)
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="shipping" value="express">
-                        Livraison Express - 15€ (2-3 jours)
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="shipping" value="pickup">
-                        Retrait sur place - Gratuit
-                    </label>
-                </div>
-            </fieldset>
-
-            <!-- Section Adresse -->
-            <fieldset class="form-section">
-                <legend>Adresse de Livraison</legend>
-                
-                <div class="form-group">
-                    <label for="firstname">Prénom *</label>
-                    <input type="text" id="firstname" name="firstname" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="lastname">Nom *</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="address">Adresse *</label>
-                    <input type="text" id="address" name="address" required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="postal">Code Postal *</label>
-                        <input type="text" id="postal" name="postal" pattern="[0-9]{5}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Ville *</label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="country">Pays *</label>
-                    <input type="text" id="country" name="country" value="France" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Téléphone *</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9\s\-\+\(\)]{10,}" required>
-                </div>
-            </fieldset>
-
-            <!-- Section Contact -->
-            <fieldset class="form-section">
-                <legend>Informations de Contact</legend>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message ou demandes spéciales</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Décrivez vos demandes spéciales..."></textarea>
-                </div>
-            </fieldset>
-
-            <!-- Section Paiement -->
-            <fieldset class="form-section">
-                <legend>Méthode de Paiement</legend>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="payment" value="card" required>
-                        Carte Bancaire
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="payment" value="paypal">
-                        PayPal
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="payment" value="transfer">
-                        Virement Bancaire
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="conditions" required>
-                        J'accepte les <a href="#" target="_blank">conditions générales</a>
-                    </label>
-                </div>
-            </fieldset>
-
-            <!-- Boutons -->
-            <div class="form-actions">
-                <button type="reset" class="btn btn-secondary">Effacer</button>
-                <button type="submit" class="btn btn-primary btn-large">Valider la commande</button>
-            </div>
-        </form>
-
-        <!-- Section Info Tarifs -->
-        <div class="tariffs-info">
-            <h3>Tarifs de Référence</h3>
-            <table class="tariff-table">
-                <thead>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Format/Type</th>
-                        <th>Prix</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Peinture Acrylique</td>
-                        <td>250 ml</td>
-                        <td>15€</td>
-                    </tr>
-                    <tr>
-                        <td>Peinture Acrylique</td>
-                        <td>500 ml</td>
-                        <td>25€</td>
-                    </tr>
-                    <tr>
-                        <td>Peinture Acrylique</td>
-                        <td>1 Litre</td>
-                        <td>40€</td>
-                    </tr>
-                    <tr>
-                        <td>Peinture Acrylique</td>
-                        <td>5 Litres</td>
-                        <td>150€</td>
-                    </tr>
-                    <tr>
-                        <td>Feutre Professionnel</td>
-                        <td>Fine (0.5mm)</td>
-                        <td>3€</td>
-                    </tr>
-                    <tr>
-                        <td>Feutre Professionnel</td>
-                        <td>Moyenne (1mm)</td>
-                        <td>4€</td>
-                    </tr>
-                    <tr>
-                        <td>Feutre Professionnel</td>
-                        <td>Large (2mm)</td>
-                        <td>5€</td>
-                    </tr>
-                    <tr>
-                        <td>Feutre Professionnel</td>
-                        <td>Pinceau</td>
-                        <td>6€</td>
-                    </tr>
-                    <tr>
-                        <td>Kit Débutant</td>
-                        <td>Complet</td>
-                        <td>49€</td>
-                    </tr>
-                    <tr>
-                        <td>Kit Artiste</td>
-                        <td>Complet</td>
-                        <td>129€</td>
-                    </tr>
-                    <tr>
-                        <td>Kit Studio Pro</td>
-                        <td>Complet</td>
-                        <td>299€</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <h1>🛒 Mon Panier</h1>
+    <div id="cart-content"><!-- Contenu généré par JavaScript --></div>
 </main>
 
 <footer class="site-footer">
@@ -326,5 +67,136 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ==================== AFFICHAGE ET GESTION DYNAMIQUE DU PANIER ====================
+
+function renderCart() {
+  const cartContent = document.getElementById('cart-content');
+  const cartItems = cart.getCart();
+
+  if (cartItems.length === 0) {
+    cartContent.innerHTML = `
+      <div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(109, 46, 191, 0.05), rgba(46, 191, 174, 0.05)); border-radius: 8px; margin: 40px 0;">
+        <p style="font-size: 1.2rem; color: #999; margin-bottom: 20px;">Votre panier est vide</p>
+        <a href="produits.html" class="btn btn-primary">← Retour aux produits</a>
+      </div>
+    `;
+    return;
+  }
+
+  let html = `
+    <style>
+      .cart-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; }
+      .cart-table thead { background: linear-gradient(135deg, #6d2ebf, #2ebfae); color: white; }
+      .cart-table th, .cart-table td { padding: 15px; text-align: left; }
+      .cart-table tbody tr:hover { background: #f9f9f9; }
+      .color-swatch { display: inline-block; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ddd; margin-right: 10px; vertical-align: middle; }
+      .quantity-control { display: flex; align-items: center; gap: 5px; }
+      .quantity-control input { width: 50px; padding: 5px; border: 1px solid #ddd; border-radius: 4px; }
+      .quantity-control button { padding: 5px 10px; background: #6d2ebf; color: white; border: none; border-radius: 4px; cursor: pointer; }
+      .quantity-control button:hover { background: #2ebfae; }
+      .remove-btn { background: #ff4757; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; transition: all 0.3s; }
+      .remove-btn:hover { background: #ff3838; transform: scale(1.05); }
+      .cart-summary-section { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); max-width: 400px; margin: 30px 0 30px auto; }
+      .summary-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e0e0e0; }
+      .summary-row.total { font-size: 1.4rem; font-weight: 700; color: #6d2ebf; border-top: 2px solid #2ebfae; border-bottom: 2px solid #2ebfae; margin-top: 15px; padding: 15px 0; }
+      .checkout-section { text-align: center; margin: 30px 0; }
+      .checkout-section .btn { margin: 0 10px; }
+    </style>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Article</th>
+          <th>Couleur</th>
+          <th>Caractéristiques</th>
+          <th>Prix unitaire</th>
+          <th>Quantité</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  cartItems.forEach((item, index) => {
+    const total = (item.price * item.quantity).toFixed(2);
+    const details = [];
+    if (item.size) details.push('Taille: ' + item.size + 'ml');
+    if (item.type) details.push('Type: ' + item.type);
+
+    html += `
+      <tr>
+        <td><strong>${item.product}</strong></td>
+        <td><span class="color-swatch" style="background-color: ${item.color};" title="${item.color}"></span></td>
+        <td>${details.join(' • ') || 'Standard'}</td>
+        <td>${item.price.toFixed(2)}€</td>
+        <td>
+          <div class="quantity-control">
+            <button type="button" onclick="updateQty(${index}, ${item.quantity - 1})">−</button>
+            <input type="number" value="${item.quantity}" min="1" max="100" onchange="updateQty(${index}, this.value)">
+            <button type="button" onclick="updateQty(${index}, ${item.quantity + 1})">+</button>
+          </div>
+        </td>
+        <td><strong>${total}€</strong></td>
+        <td><button type="button" class="remove-btn" onclick="removeItem(${index})">Supprimer</button></td>
+      </tr>
+    `;
+  });
+
+  html += `</tbody></table>`;
+
+  // Résumé
+  const total = cart.getTotal().toFixed(2);
+  html += `
+    <div class="cart-summary-section">
+      <div class="summary-row">
+        <span>Sous-total:</span>
+        <span>${total}€</span>
+      </div>
+      <div class="summary-row">
+        <span>Livraison:</span>
+        <span>5€</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total:</span>
+        <span>${(parseFloat(total) + 5).toFixed(2)}€</span>
+      </div>
+    </div>
+    <div class="checkout-section">
+      <a href="produits.html" class="btn btn-secondary">← Continuer les achats</a>
+      <button type="button" class="btn btn-primary" onclick="proceedToCheckout()">Procéder au paiement →</button>
+    </div>
+  `;
+
+  cartContent.innerHTML = html;
+}
+
+function updateQty(index, newQty) {
+  cart.updateQuantity(index, newQty);
+  renderCart();
+  updateCartBadge();
+}
+
+function removeItem(index) {
+  if (confirm('Êtes-vous sûr de vouloir supprimer cet article?')) {
+    cart.removeItem(index);
+    renderCart();
+    updateCartBadge();
+  }
+}
+
+function proceedToCheckout() {
+  alert('Paiement en cours de développement - Redirection vers formulaire de confirmation');
+  window.location.href = 'confirmation.html';
+}
+
+// Initialiser l'affichage au chargement
+document.addEventListener('DOMContentLoaded', () => {
+  renderCart();
+  updateCartBadge();
+});
+</script>
+
 </body>
 </html>

@@ -394,6 +394,7 @@ main h3 {
   padding: 40px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  overflow: visible;
   margin: 40px 0;
 }
 
@@ -402,6 +403,7 @@ main h3 {
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  overflow: visible;
 }
 
 .org-level {
@@ -410,6 +412,22 @@ main h3 {
   gap: 30px;
   width: 100%;
   flex-wrap: wrap;
+}
+
+/* Empêcher le niveau des pôles (level-2) de se casser sur plusieurs lignes
+   et ajuster la taille des boîtes pour que 5 éléments tiennent sur une ligne */
+.org-level.level-2 {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow: visible; /* allow hover overflow to show */
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.org-level.level-2 .org-box {
+  flex: 1 1 180px;
+  min-width: 150px;
+  max-width: 240px;
 }
 
 .org-box {
@@ -426,6 +444,8 @@ main h3 {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   border-color: var(--secondary-color);
+  position: relative;
+  z-index: 20;
 }
 
 .org-box.director {
