@@ -463,6 +463,7 @@ main h3 {
 .org-avatar {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .org-box h3, .org-box h4 {
