@@ -5,216 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Produits - Kécolor</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
     <script src="cart.js" defer></script>
-    <style>
-        .color-selector {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            padding: 25px;
-            background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
-            border-radius: 12px;
-            border: 2px solid #e0e0e0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        
-        .color-input-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .color-input-wrapper label {
-            font-weight: 600;
-            color: #333;
-            font-size: 0.95em;
-            letter-spacing: 0.3px;
-        }
-        
-        .color-input-wrapper input[type="color"] {
-            width: 100px;
-            height: 100px;
-            border: 4px solid #ddd;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .color-input-wrapper input[type="color"]:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .color-preview {
-            width: 150px;
-            height: 100px;
-            border-radius: 12px;
-            border: 3px solid #999;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .color-input-wrapper input[type="color"]:hover ~ .color-preview {
-            transform: scale(1.03);
-        }
-        
-        .color-info-text {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        /* Améliorations du formulaire produit */
-        .product-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 25px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-            border-radius: 12px;
-            border: 2px solid #e8e8e8;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-top: 20px;
-            align-items: end;
-        }
-
-        .product-form select,
-        .product-form input[type="number"] {
-            padding: 12px 14px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 0.95em;
-            background-color: white;
-            color: #333;
-            transition: all 0.3s ease;
-            font-family: inherit;
-            cursor: pointer;
-        }
-
-        .product-form select:focus,
-        .product-form input[type="number"]:focus {
-            border-color: #6d2ebf;
-            box-shadow: 0 0 0 3px rgba(109, 46, 191, 0.1);
-            outline: none;
-        }
-
-        .product-form select:hover,
-        .product-form input[type="number"]:hover {
-            border-color: #6d2ebf;
-        }
-
-        .product-form select {
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236d2ebf' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 20px;
-            padding-right: 40px;
-            appearance: none;
-        }
-
-        .product-form input[type="color"] {
-            width: 60px;
-            height: 45px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            padding: 4px;
-        }
-
-        .product-form input[type="color"]:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            border-color: #6d2ebf;
-        }
-
-        .product-form .btn {
-            grid-column: auto;
-            padding: 12px 24px;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .product-form .btn-primary {
-            background: linear-gradient(135deg, #6d2ebf 0%, #5a1fa0 100%);
-            border: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(109, 46, 191, 0.3);
-        }
-
-        .product-form .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(109, 46, 191, 0.4);
-        }
-
-        .product-form .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        /* Conteneur pour grouper les sélections */
-        .product-form-section {
-            display: contents;
-        }
-
-        /* Amélioration des formulaires kits */
-        .kit-form {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            padding: 15px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-            border-radius: 8px;
-            border: 2px solid #e8e8e8;
-            margin-top: 15px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .kit-form input[type="number"] {
-            padding: 10px 12px;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            font-size: 0.95em;
-            background-color: white;
-            color: #333;
-            transition: all 0.2s ease;
-            min-width: 80px;
-        }
-
-        .kit-form input[type="number"]:focus {
-            border-color: #6d2ebf;
-            box-shadow: 0 0 0 3px rgba(109, 46, 191, 0.1);
-            outline: none;
-        }
-
-        .kit-form .btn-secondary {
-            background: linear-gradient(135deg, #2ebfae 0%, #1f8c7e 100%);
-            border: none;
-            padding: 10px 20px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(46, 191, 174, 0.3);
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .kit-form .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(46, 191, 174, 0.4);
-        }
-
-        .kit-form .btn-secondary:active {
-            transform: translateY(0);
-        }
-    </style>
 </head>
 <body>
 <header class="site-header">
@@ -370,7 +162,7 @@
                     <h4>Produits :</h4>
                     <ul>
                         <li>Pinceau - <strong>2€</strong></li>
-                        <li>Palette mélange - <strong>10€</strong></li>
+                        <li>Palette pour mélanges - <strong>10€</strong></li>
                         <li>Toile 50x50cm - <strong>15€</strong></li>
                         <li>Toile 100x100cm - <strong>30€</strong></li>
                     </ul>
@@ -379,7 +171,7 @@
                 <div class="product-info">
                     <h4>Caractéristiques</h4>
                     <ul>
-                        <li>✓</li>
+                        <li>✓ Large choix de produits de haute qualité pour accompagner vos feutres et votre peintures</li>
                     </ul>
                 </div>
 
