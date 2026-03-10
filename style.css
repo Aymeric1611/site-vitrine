@@ -1255,15 +1255,97 @@ main h3 {
 }
 
 .product-form .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(109, 46, 191, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(109, 46, 191, 0.4);
 }
 
 .product-form .btn-primary:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 /* Conteneur pour grouper les sélections */
 .product-form-section {
-    display: contents;
+  display: contents;
+}
+
+.confirmation-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+        
+.confirmation-box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 500px;
+}
+
+.confirmation-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.confirmation-box h1 {
+  color: #6d2ebf;
+  margin-bottom: 10px;
+}
+
+.confirmation-box p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.order-info {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.order-info p {
+  margin: 10px 0;
+}
+
+.order-info strong {
+  color: #6d2ebf;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contact-email {
+  font-size: 0.9em;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.contact-email a {
+  color: #6d2ebf;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .confirmation-box {
+      padding: 30px 20px;
+  }
+  
+  .confirmation-buttons {
+      flex-direction: column;
+  }
 }

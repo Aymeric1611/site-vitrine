@@ -1,94 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Confirmation - Kécolor</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
-    <style>
-        .confirmation-page {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        
-        .confirmation-box {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-        }
-        
-        .confirmation-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-        
-        .confirmation-box h1 {
-            color: #6d2ebf;
-            margin-bottom: 10px;
-        }
-        
-        .confirmation-box p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .order-info {
-            background: #f0f0f0;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-            text-align: left;
-        }
-        
-        .order-info p {
-            margin: 10px 0;
-        }
-        
-        .order-info strong {
-            color: #6d2ebf;
-        }
-        
-        .confirmation-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        .contact-email {
-            font-size: 0.9em;
-            color: #999;
-            margin-bottom: 20px;
-        }
-        
-        .contact-email a {
-            color: #6d2ebf;
-            text-decoration: none;
-        }
-        
-        .contact-email a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .confirmation-box {
-                padding: 30px 20px;
-            }
-            
-            .confirmation-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmation - Kécolor</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
+
 </head>
 <body>
 <header class="site-header">
@@ -103,7 +21,7 @@
       <nav class="site-nav" role="navigation" aria-label="Menu principal">
         <a href="index.html">Accueil</a>
         <a href="histoire.html">Histoire</a>
-        <a href="produits.html">Produits</a>
+        <a href="produits.php">Produits</a>
         <a href="recrutement.html">Recrutement</a>
         <a href="equipe.html">Équipe</a>
         <a href="contact.html">Contact</a>
@@ -121,8 +39,8 @@
             <p>Votre commande a été reçue avec succès. Un agent Kécolor confirmera votre demande dans les 24 heures.</p>
             
             <div class="order-info">
-                <p><strong>Numéro de commande:</strong> KLC-2026-001</p>
-                <p><strong>Date:</strong> 3 février 2026</p>
+                <p><strong>Numéro de commande:</strong> KLC-<?=  date("Y") ?>-001</p>
+                <p><strong>Date:</strong><?=  date("d:m:Y"); ?> </p>
                 <p><strong>Statut:</strong> En attente de confirmation</p>
                 <p><strong>Contact:</strong> support@kecolor.fr</p>
             </div>
@@ -134,7 +52,7 @@
             
             <div class="confirmation-buttons">
                 <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
-                <a href="produits.html" class="btn btn-secondary">Continuer les achats</a>
+                <a href="produits.php" class="btn btn-secondary">Continuer les achats</a>
             </div>
         </div>
     </div>

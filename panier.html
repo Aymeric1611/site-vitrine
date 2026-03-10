@@ -20,7 +20,7 @@
       <nav class="site-nav" role="navigation" aria-label="Menu principal">
         <a href="index.html">Accueil</a>
         <a href="histoire.html">Histoire</a>
-        <a href="produits.html">Produits</a>
+        <a href="produits.php">Produits</a>
         <a href="recrutement.html">Recrutement</a>
         <a href="equipe.html">Équipe</a>
         <a href="contact.html">Contact</a>
@@ -80,7 +80,7 @@ function renderCart() {
     cartContent.innerHTML = `
       <div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(109, 46, 191, 0.05), rgba(46, 191, 174, 0.05)); border-radius: 8px; margin: 40px 0;">
         <p style="font-size: 1.2rem; color: #999; margin-bottom: 20px;">Votre panier est vide</p>
-        <a href="produits.html" class="btn btn-primary">← Retour aux produits</a>
+        <a href="produits.php" class="btn btn-primary">← Retour aux produits</a>
       </div>
     `;
     return;
@@ -165,7 +165,7 @@ function renderCart() {
       </div>
     </div>
     <div class="checkout-section">
-      <a href="produits.html" class="btn btn-secondary">← Continuer les achats</a>
+      <a href="produits.php" class="btn btn-secondary">← Continuer les achats</a>
       <button type="button" class="btn btn-primary" onclick="proceedToCheckout()">Procéder au paiement →</button>
     </div>
   `;
@@ -189,7 +189,7 @@ function removeItem(index) {
 
 function proceedToCheckout() {
   alert('Paiement en cours de développement - Redirection vers formulaire de confirmation');
-  window.location.href = 'confirmation.html';
+  window.location.href = 'confirmation.php';
 }
 
 // Initialiser l'affichage au chargement

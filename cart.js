@@ -196,20 +196,16 @@ function getPriceFromForm(form) {
   // Mapper les prix
   const prices = {
     'Peinture Acrylique': {
-      '250': 15,
-      '500': 25,
-      '1000': 40,
-      '5000': 150
+      '250': 3.5,
+      '500': 6,
+      '1000': 11,
+      '5000': 52.5
     },
     'Feutre Professionnel': {
-      'fine': 3,
-      'medium': 4,
-      'large': 5,
-      'brush': 6
+      'fine': 2.5,
+      'medium': 3.5,
+      'large': 4.5,
     },
-    'Kit Débutant': 49,
-    'Kit Artiste': 129,
-    'Kit Studio Pro': 299
   };
 
   if (!product) return 0;
