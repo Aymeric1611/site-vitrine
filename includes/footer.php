@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer id="bas de page" class="site-footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-section">
@@ -31,3 +31,6 @@
     </div>
   </div>
 </footer>
+
+</body>
+</html>

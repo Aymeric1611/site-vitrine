@@ -111,9 +111,9 @@ include __DIR__ . '/includes/header.php';
                     <select name="quantity" required>
                         <option value="">-- Sélectionnez une quantité --</option>
                         <option value="1">1 feutre</option>
-                        <option value="6">6 feutres (10% de réduction)</option>
-                        <option value="12">12 feutres (20% de réduction)</option>
-                        <option value="24">24 feutres (30% de réduction)</option>
+                        <option value="6">6 feutres (5% de réduction)</option>
+                        <option value="12">12 feutres (10% de réduction)</option>
+                        <option value="24">24 feutres (15% de réduction)</option>
                     </select>
                     <input type="color" name="color" id="felt-color-input" value="#3357FF" title="Choisissez votre couleur">
                     <button type="submit" class="btn btn-primary">Ajouter au panier</button>
@@ -240,6 +240,33 @@ include __DIR__ . '/includes/header.php';
                     <input type="number" name="quantity" value="1" min="1" max="100" placeholder="Quantité">
                     <button type="submit" class="btn btn-primary">Ajouter au panier</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section produit à venir -->
+    <section id="autres produits" class="product-section">
+        <h2>Produits à venir</h2>
+        
+        <div class="product-card">
+            <div class="product-details">
+                <p class="description">En cours de conception</p>
+                
+                <div class="product-specs">
+                    <h4>Produits :</h4>
+                    <ul>
+                        <li>Crayons de couleurs personnalisables</li>
+                        <li>Surligneurs personnalisables</li>
+                        <li>Stylos personnalisables</li>
+                    </ul>
+                </div>
+
+                <div class="product-info">
+                    <h4>Caractéristiques</h4>
+                    <ul>
+                        <li>✓ Produits en conception, mais basé sur le même système que pour la peinture et les feutres</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

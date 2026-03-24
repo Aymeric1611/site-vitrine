@@ -182,7 +182,7 @@ function addToCart(event) {
     size,
     type: formData.get('type') || undefined,
     quantity: parseInt(formData.get('quantity')) || 1,
-    color: formData.get('color') || '#000000',
+    color: formData.get('color') || undefined,
     price: getPriceFromForm(form)
   };
 
@@ -264,9 +264,9 @@ function getPriceFromForm(form) {
   const qty = parseInt(form.querySelector('[name="quantity"]')?.value) || 1;
 
   if (product === 'Feutre Professionnel') {
-    if (qty >= 24) return basePrice * 0.7;
-    if (qty >= 12) return basePrice * 0.8;
-    if (qty >= 6) return basePrice * 0.9;
+    if (qty >= 24) return basePrice * 0.85;
+    if (qty >= 12) return basePrice * 0.9;
+    if (qty >= 6) return basePrice * 0.95;
     return basePrice;
   }
 

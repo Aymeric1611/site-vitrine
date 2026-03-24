@@ -64,8 +64,8 @@ function renderCart() {
   cartItems.forEach((item, index) => {
     const total = (item.price * item.quantity).toFixed(2);
     const details = [];
-    if (item.size) details.push('Taille: ' + item.size + 'ml');
-    if (item.type) details.push('Type: ' + item.type);
+    if (item.size) details.push('Taille : ' + item.size + ' ml');
+    if (item.type) details.push('Type : ' + item.type);
 
     html += `
       <tr>

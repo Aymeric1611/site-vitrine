@@ -237,6 +237,36 @@ main h3 {
   color: var(--secondary-color);
 }
 
+/* ==================== BOUTON FIXE BAS DROITE ==================== */
+.fixed-bottom-right-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, blue, rgb(82, 1, 82));
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fixed-bottom-right-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.3);
+}
+
+.fixed-bottom-right-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,.2);
+}
+
 /* ==================== SECTION HERO ==================== */
 .hero {
   text-align: center;
