@@ -1,73 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Panier - Kécolor</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
-    <script src="cart.js" defer></script>
-</head>
-<body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-content">
-      <h1 class="site-title">
-        <a href="index.html">
-          <img src="image/Logo Kécolor avec nom entreprise.png" alt="Kécolor Logo" height="50">
-        </a>
-      </h1>
-      <nav class="site-nav" role="navigation" aria-label="Menu principal">
-        <a href="index.html">Accueil</a>
-        <a href="histoire.html">Histoire</a>
-        <a href="produits.php">Produits</a>
-        <a href="recrutement.html">Recrutement</a>
-        <a href="equipe.html">Équipe</a>
-        <a href="contact.html">Contact</a>
-        <a href="panier.html" class="cart-link active">🛒 Panier</a>
-      </nav>
-    </div>
-  </div>
-</header>
+<?php
+$pageTitle = "Mon Panier - Kécolor";
+include __DIR__ . '/includes/header.php';
+?>
 
 <main class="content container">
     <h1>🛒 Mon Panier</h1>
     <div id="cart-content"><!-- Contenu généré par JavaScript --></div>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="histoire.html">Notre histoire</a></li>
-          <li><a href="equipe.html">Notre équipe</a></li>
-          <li><a href="recrutement.html">Rejoignez-nous</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-          <li><a href="panier.html">Panier</a></li>
-          <li><a href="contact.html#FAQ">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Suivez-nous</h4>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kécolor - Aymeric Joblin — <a href="mailto:aymericjoblin@gmail.com">aymericjoblin@gmail.com</a></p>
-    </div>
-  </div>
-</footer>
+<?php include __DIR__ . '/includes/footer.php'; ?>
 
 <script>
 // ==================== AFFICHAGE ET GESTION DYNAMIQUE DU PANIER ====================

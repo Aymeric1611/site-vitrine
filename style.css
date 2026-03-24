@@ -93,6 +93,65 @@ body {
   border: 2px solid rgba(255,255,255,0.3);
 }
 
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: var(--transition);
+  position: relative;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.nav-toggle .hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255,255,255,0.95);
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: rgba(255,255,255,0.95);
+  transition: var(--transition);
+}
+
+.nav-toggle .hamburger::before {
+  top: -7px;
+}
+
+.nav-toggle .hamburger::after {
+  top: 7px;
+}
+
+.site-header.menu-open .nav-toggle .hamburger {
+  background: transparent;
+}
+
+.site-header.menu-open .nav-toggle .hamburger::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.menu-open .nav-toggle .hamburger::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ==================== CONTENU PRINCIPAL ==================== */
 main {
   min-height: calc(100vh - 200px);
@@ -468,12 +527,48 @@ main h3 {
 
 .org-box h3, .org-box h4 {
   margin: 10px 0 5px 0;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
 }
 
 .org-box .position {
   color: var(--primary-color);
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+/* Responsive adjustments for organisation chart */
+@media (max-width: 860px) {
+  .org-level.level-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .org-level.level-2 .org-box {
+    flex: 1 1 180px;
+    min-width: 160px;
+    max-width: 230px;
+  }
+
+  .org-box h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .org-level.level-2 {
+    gap: 12px;
+  }
+
+  .org-box {
+    padding: 16px;
+  }
+
+  .org-box h3 {
+    font-size: 0.95rem;
+  }
 }
 
 .level-3 .org-category {
@@ -999,16 +1094,29 @@ main h3 {
   .header-content {
     flex-direction: column;
     gap: 10px;
+    align-items: stretch;
+  }
+
+  .nav-toggle {
+    display: flex;
   }
 
   .site-nav {
     flex-direction: column;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .site-header.menu-open .site-nav {
+    max-height: 480px;
   }
 
   .site-nav a {
     display: block;
     text-align: center;
+    padding: 12px 16px;
   }
 
   .hero h1 {

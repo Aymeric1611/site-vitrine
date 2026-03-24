@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nous Contacter - Kécolor</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
-</head>
-
-<body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-content">
-      <h1 class="site-title">
-        <a href="index.html">
-          <img src="image/Logo Kécolor avec nom entreprise.png" alt="Kécolor Logo" height="50">
-          Kécolor
-        </a>
-      </h1>
-      <nav class="site-nav" role="navigation" aria-label="Menu principal">
-        <a href="index.html">Accueil</a>
-        <a href="histoire.html">Histoire</a>
-        <a href="produits.php">Produits</a>
-        <a href="recrutement.html">Recrutement</a>
-        <a href="equipe.html">Équipe</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="panier.html" class="cart-link">🛒 Panier</a>
-      </nav>
-    </div>
-  </div>
-</header>
+<?php
+$pageTitle = "Nous Contacter - Kécolor";
+include __DIR__ . '/includes/header.php';
+?>
 
 <main class="content container">
     <h1>Nous Contacter</h1>
@@ -94,12 +66,12 @@
                 <h3>📍 Adresse</h3>
                 <p>Kécolor SARL<br>
                 123 Avenue des Couleurs<br>
-                69000 Lyon, France</p>
+                25000 Besançon, France</p>
             </div>
 
             <div class="contact-info">
                 <h3>☎️ Téléphone</h3>
-                <p><a href="tel:+33123456789">+33 (1) 23 45 67 89</a></p>
+                <p><a href="tel:+33123456789">+33 06 23 45 67 89</a></p>
             </div>
 
             <div class="contact-info">
@@ -120,13 +92,13 @@
                 <h3>📞 Nos Départements</h3>
                 <div class="dept-list">
                     <div class="dept-item">
-                        <strong>Ventes:</strong> <a href="tel:+33123456701">+33 (1) 23 45 67 01</a>
+                        <strong>Ventes:</strong> <a href="tel:+33123456701">+33 06 23 45 67 01</a>
                     </div>
                     <div class="dept-item">
-                        <strong>Support Client:</strong> <a href="tel:+33123456702">+33 (1) 23 45 67 02</a>
+                        <strong>Support Client:</strong> <a href="tel:+33123456702">+33 06 23 45 67 02</a>
                     </div>
                     <div class="dept-item">
-                        <strong>Ressources Humaines:</strong> <a href="tel:+33123456703">+33 (1) 23 45 67 03</a>
+                        <strong>Ressources Humaines:</strong> <a href="tel:+33123456703">+33 06 23 45 67 03</a>
                     </div>
                     <div class="dept-item">
                         <strong>Facturation:</strong> <a href="mailto:facturation@kecolor.fr">facturation@kecolor.fr</a>
@@ -178,39 +150,7 @@
     </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="histoire.html">Notre histoire</a></li>
-          <li><a href="equipe.html">Notre équipe</a></li>
-          <li><a href="recrutement.html">Rejoignez-nous</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-          <li><a href="panier.html">Panier</a></li>
-          <li><a href="contact.html#FAQ">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Suivez-nous</h4>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kécolor - Aymeric Joblin — <a href="mailto:aymericjoblin@gmail.com">aymericjoblin@gmail.com</a></p>
-    </div>
-  </div>
-</footer>
+<?php include __DIR__ . '/includes/footer.php'; ?>
 
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {

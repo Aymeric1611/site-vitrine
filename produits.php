@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Produits - Kécolor</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
-    <script src="cart.js" defer></script>
-</head>
-<body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-content">
-      <h1 class="site-title">
-        <a href="index.html">
-          <img src="image/Logo Kécolor avec nom entreprise.png" alt="Kécolor Logo" height="50">
-          Kécolor
-        </a>
-      </h1>
-      <nav class="site-nav" role="navigation" aria-label="Menu principal">
-        <a href="index.html">Accueil</a>
-        <a href="histoire.html">Histoire</a>
-        <a href="produits.html" class="active">Produits</a>
-        <a href="recrutement.html">Recrutement</a>
-        <a href="equipe.html">Équipe</a>
-        <a href="contact.html">Contact</a>
-        <a href="panier.html" class="cart-link">🛒 Panier</a>
-      </nav>
-    </div>
-  </div>
-</header>
+<?php
+$pageTitle = "Produits - Kécolor";
+include __DIR__ . '/includes/header.php';
+?>
 
 <main class="content container">
     <h1>Nos Produits</h1>
@@ -150,6 +122,93 @@
         </div>
     </section>
 
+    <!-- Section Pinceaux -->
+    <section id="pinceaux" class="product-section">
+        <h2>Pinceaux Professionnels</h2>
+        
+        <div class="product-card">
+            <div class="product-details">
+                <h3>Pinceaux Professionnels</h3>
+                <p class="description">Pinceaux de haute qualité et une durée de vie exceptionnelle.</p>
+                
+                <div class="product-specs">
+                    <h4>Options de pointe :</h4>
+                    <ul>
+                        <li>Fine (0.5mm) - <strong>2.5€</strong></li>
+                        <li>Moyenne (1mm) - <strong>3.5€</strong></li>
+                        <li>Large (2mm) - <strong>4.5€</strong></li>
+                    </ul>
+                </div>
+
+                <div class="product-info">
+                    <h4>Caractéristiques</h4>
+                    <ul>
+                        <li>✓ Parfait pour tous les produits</li>
+                        <li>✓ Poils synthétiques de qualité</li>
+                        <li>✓ Manche ergonomique</li>
+                    </ul>
+                </div>
+
+                <form action="#" method="POST" class="product-form">
+                    <input type="hidden" name="product" value="Pinceau Professionnel">
+                    <select name="type" required>
+                        <option value="">-- Sélectionnez une  pointe --</option>
+                        <option value="fine">Fine (0.5mm) - 2.5€</option>
+                        <option value="medium">Moyenne (1mm) - 3.5€</option>
+                        <option value="large">Large (2mm) - 4.5€</option>
+                    </select>
+                    <select name="quantity" required>
+                        <option value="">-- Sélectionnez une quantité --</option>
+                        <option value="1">1 pinceau</option>
+                        <option value="6">6 pinceaux (5% de réduction)</option>
+                        <option value="12">12 pinceaux (10% de réduction)</option>
+                        <option value="24">24 pinceaux (15% de réduction)</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section toiles -->
+    <section id="toiles" class="product-section">
+        <h2>Toiles</h2>
+        
+        <div class="product-card">
+            <div class="product-details">
+                <p class="description">Choisissez la taille de toile qui convient à votre projet</p>
+                
+                <div class="product-specs">
+                    <h4>Produits :</h4>
+                    <ul>
+                        <li>Toile 25x25cm - <strong>8€</strong></li>
+                        <li>Toile 50x50cm - <strong>15€</strong></li>
+                        <li>Toile 100x100cm - <strong>30€</strong></li>
+                    </ul>
+                </div>
+
+                <div class="product-info">
+                    <h4>Caractéristiques</h4>
+                    <ul>
+                        <li>✓ Toile de qualité supérieure</li>
+                    </ul>
+                </div>
+
+                <form action="#" method="POST" class="product-form">
+                    <input type="hidden" name="product" value="Toile">
+                    <select name="size" required>
+                        <option value="">-- Sélectionnez la taille --</option>
+                        <option value="25x25">Toile 25x25cm - 8€</option>
+                        <option value="50x50">Toile 50x50cm - 15€</option>
+                        <option value="100x100">Toile 100x100cm - 30€</option>
+                    </select>
+                    <input type="number" name="quantity" value="1" min="1" max="100" placeholder="Quantité">
+                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Section autres outils -->
     <section id="autres produits" class="product-section">
         <h2>Autres produits</h2>
@@ -161,10 +220,7 @@
                 <div class="product-specs">
                     <h4>Produits :</h4>
                     <ul>
-                        <li>Pinceau - <strong>2€</strong></li>
                         <li>Palette pour mélanges - <strong>10€</strong></li>
-                        <li>Toile 50x50cm - <strong>15€</strong></li>
-                        <li>Toile 100x100cm - <strong>30€</strong></li>
                     </ul>
                 </div>
 
@@ -179,10 +235,7 @@
                     <input type="hidden" name="product" value="autres produits">
                     <select name="size" required>
                         <option value="">-- Sélectionnez un outil --</option>
-                        <option value="Pinceau">Pinceau - 2€</option>
                         <option value="Palette mélange">Palette mélange - 10€</option>
-                        <option value="Toile 50x50cm">Toile 50x50cm - 15€</option>
-                        <option value="Toile 100x100cm">Toile 100x100cm - 30€</option>
                     </select>
                     <input type="number" name="quantity" value="1" min="1" max="100" placeholder="Quantité">
                     <button type="submit" class="btn btn-primary">Ajouter au panier</button>
@@ -247,38 +300,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="histoire.html">Notre histoire</a></li>
-          <li><a href="equipe.html">Notre équipe</a></li>
-          <li><a href="recrutement.html">Rejoignez-nous</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-          <li><a href="panier.html">Panier</a></li>
-          <li><a href="contact.html#FAQ">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Suivez-nous</h4>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kécolor - Aymeric Joblin — <a href="mailto:aymericjoblin@gmail.com">aymericjoblin@gmail.com</a></p>
-    </div>
-  </div>
-</footer>
+<?php include __DIR__ . '/includes/footer.php'; ?>
 </body>
 </html>

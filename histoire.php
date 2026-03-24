@@ -1,34 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notre Histoire - Kécolor</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="image/Logo Kécolor carre.png" type="image/x-icon">
-</head>
-<body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-content">
-      <h1 class="site-title">
-        <a href="index.html">
-          <img src="image/Logo Kécolor avec nom entreprise.png" alt="Kécolor Logo" height="50">
-          Kécolor
-        </a>
-      </h1>
-      <nav class="site-nav" role="navigation" aria-label="Menu principal">
-        <a href="index.html">Accueil</a>
-        <a href="histoire.html" class="active">Histoire</a>
-        <a href="produits.php">Produits</a>
-        <a href="recrutement.html">Recrutement</a>
-        <a href="equipe.html">Équipe</a>
-        <a href="contact.html">Contact</a>
-        <a href="panier.html" class="cart-link">🛒 Panier</a>
-      </nav>
-    </div>
-  </div>
-</header>
+<?php
+$pageTitle = "Notre Histoire - Kécolor";
+include __DIR__ . '/includes/header.php';
+?>
 
 <main class="content container">
     <h1>Notre Histoire</h1>
@@ -71,7 +44,7 @@
         <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <h3>2024 - Le Présent</h3>
+                <h3>Actuellement</h3>
                 <p>Kécolor est devenue une référence en matière de peintures et feutres personnalisés. Nous servons des milliers de clients satisfaits chaque année.</p>
             </div>
         </div>
@@ -79,7 +52,7 @@
         <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <h3>2026 - L'Avenir</h3>
+                <h3>A l'avenir</h3>
                 <p>Nous continuons à innover et à développer de nouveaux produits pour répondre aux besoins créatifs de notre communauté croissante.</p>
             </div>
         </div>
@@ -113,39 +86,7 @@
     </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="histoire.html">Notre histoire</a></li>
-          <li><a href="equipe.html">Notre équipe</a></li>
-          <li><a href="recrutement.html">Rejoignez-nous</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-          <li><a href="panier.html">Panier</a></li>
-          <li><a href="contact.html#FAQ">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Suivez-nous</h4>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kécolor - Aymeric Joblin — <a href="mailto:aymericjoblin@gmail.com">aymericjoblin@gmail.com</a></p>
-    </div>
-  </div>
-</footer>
+<?php include __DIR__ . '/includes/footer.php'; ?>
 
 </body>
 </html>

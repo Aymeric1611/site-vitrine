@@ -165,9 +165,21 @@ function addToCart(event) {
   const form = event.target;
   const formData = new FormData(form);
 
+  let product = formData.get('product');
+  let size = formData.get('size') || undefined;
+
+  // Pour les « autres produits », utiliser le choix de l'utilisateur comme nom de produit
+  if (product === 'autres produits') {
+    const selected = formData.get('size');
+    if (selected) {
+      product = selected;
+      size = undefined;
+    }
+  }
+
   const item = {
-    product: formData.get('product'),
-    size: formData.get('size') || undefined,
+    product,
+    size,
     type: formData.get('type') || undefined,
     quantity: parseInt(formData.get('quantity')) || 1,
     color: formData.get('color') || '#000000',
@@ -189,9 +201,15 @@ function addToCart(event) {
 
 // Extraire le prix du formulaire basé sur les sélections
 function getPriceFromForm(form) {
-  const product = form.querySelector('[name="product"]')?.value;
-  const size = form.querySelector('[name="size"]')?.value;
+  let product = form.querySelector('[name="product"]')?.value;
+  let size = form.querySelector('[name="size"]')?.value;
   const type = form.querySelector('[name="type"]')?.value;
+
+  // Pour les « autres produits », utiliser le choix comme nom et ne pas l'enregistrer en tant que "taille"
+  if (product === 'autres produits' && size) {
+    product = size;
+    size = undefined;
+  }
 
   // Mapper les prix
   const prices = {
@@ -206,6 +224,21 @@ function getPriceFromForm(form) {
       'medium': 3.5,
       'large': 4.5,
     },
+
+    'Pinceau Professionnel': {
+      'fine': 2.5,
+      'medium': 3.5,
+      'large': 4.5,
+    },
+
+
+    'Toile': {
+      '25x25': 8,
+      '50x50': 15,
+      '100x100': 30,
+    },
+
+    'Palette mélange': 10
   };
 
   if (!product) return 0;
@@ -219,14 +252,32 @@ function getPriceFromForm(form) {
   }
 
   // Pour les produits avec variantes
-  if (size && productPrices[size]) {
-    return productPrices[size];
-  }
-  if (type && productPrices[type]) {
-    return productPrices[type];
+  const basePrice = size && productPrices[size]
+    ? productPrices[size]
+    : type && productPrices[type]
+      ? productPrices[type]
+      : 0;
+
+  if (!basePrice) return 0;
+
+  // Appliquer les réductions en fonction de la quantité (produits avec ristourne)
+  const qty = parseInt(form.querySelector('[name="quantity"]')?.value) || 1;
+
+  if (product === 'Feutre Professionnel') {
+    if (qty >= 24) return basePrice * 0.7;
+    if (qty >= 12) return basePrice * 0.8;
+    if (qty >= 6) return basePrice * 0.9;
+    return basePrice;
   }
 
-  return 0;
+  if (product === 'Pinceau Professionnel') {
+    if (qty >= 24) return basePrice * 0.85;
+    if (qty >= 12) return basePrice * 0.9;
+    if (qty >= 6) return basePrice * 0.95;
+    return basePrice;
+  }
+
+  return basePrice;
 }
 
 // Initialiser le panier au chargement
@@ -239,4 +290,15 @@ document.addEventListener('DOMContentLoaded', () => {
   productForms.forEach(form => {
     form.addEventListener('submit', addToCart);
   });
+
+  // Menu mobile / tablette
+  const navToggle = document.querySelector('.nav-toggle');
+  const header = document.querySelector('.site-header');
+  if (navToggle && header) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      header.classList.toggle('menu-open');
+    });
+  }
 });
